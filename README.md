@@ -32,13 +32,20 @@ We will use ROS or Gazebo to take the robot commands and send them to the robot 
 ## Milestones/Schedule Checklist
 {What are the tasks that you need to complete?  Who is going to do them?  When will they be completed?}
 - [x] Complete this proposal document.  *Due Feb. 28*
-- [ ] 
-- [ ] Create progress report.  *Due April 3*
-- [ ] {add more tasks here}
+- [ ] Successfully setup speechrecognition python speech recog. module *Due April 7*
+- [ ] Successfully extract text from speech with as much noise dampening as possible *Due April 10*
+- [ ] Successfully setup an LLM *Due April 12*
+- [ ] Successfully interface LLM with output from Python Speech recognition via live feed *Due April 13*
+- [ ] Setup Gazebo successfully *Due April 17*
+- [ ] Setup simulated robot car *Due April 19*
+- [ ] Interface LLM outputs with Gazebo topics for car movement *Due April 30*
 - [ ] Create final presentation.  *Due May 6*
-- [ ] {you might have some more tasks here}
 - [ ] Provide system documentation (README.md).  *Due May 13*
 
 
 ## Measures of Success
-{How will you know you succeeded?  If you were to receive partial credit, what should we look for?}
+We believe partial credit should come from the achievement of major milestones in the form of 
+1) Succesfully setting up SpeechRecognition and pyttsx3 library of Python to extract live feed audio input
+2) Setting up LLM to produce robot commands specific to robot args and DOF given a complex life feed audio input
+3) Setting up the gazebo simulation to interface with LLM 
+4) Complete simulation responds effectively to voice input
