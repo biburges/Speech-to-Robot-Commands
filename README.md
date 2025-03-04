@@ -8,16 +8,26 @@ Team Members:
 --- 
 
 ## Project Objective
-{What are you proposing to do?}
+The goal of this project is to take speech and convert it into text which will convert it into robot commands for a robot car.
 
 
 ## Contributions
-{What is new/unique/interesting about this project?}
+This project is unique as it will allow people with upper limb disabilities to be able to use and provide commands to robot cars.
 
 
 ## Project Plan
-{How will we do it?  What resources will we use (e.g., specific online materials, specific chapters from a textbook, etc.)?}
 
+### Speech-to-Text
+
+Using Python Speech Recognition software, PyAudio, and Python pyttsx3, it will take input from a microphone and convert it into text
+
+### LLM
+
+Using a LLM such as OpenAi or Keyword Matching, to take the text and convert it into commands for the robot to understand
+
+### Robot Commands
+
+We will use ROS or Gazebo to take the robot commands and send them to the robot car.
 
 ## Milestones/Schedule Checklist
 {What are the tasks that you need to complete?  Who is going to do them?  When will they be completed?}
