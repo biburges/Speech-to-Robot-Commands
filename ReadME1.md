@@ -14,7 +14,6 @@ The goal of this project is to take speech and convert it into text which will c
 ## Contributions
 This project is unique as it will allow people with upper limb disabilities to be able to use and provide commands to robot cars.
 
-
 ## Project Plan
 
 ### Speech-to-Text
@@ -89,3 +88,6 @@ taskkill /PID <PID> /F
 ```
 ollama serve
 ```
+
+## References:
+https://www.youtube.com/watch?v=cMDHTXobwxk&list=PLuxh5fnYpxkGz7PnCX_HDE4XSMri9vp6K&index=5
