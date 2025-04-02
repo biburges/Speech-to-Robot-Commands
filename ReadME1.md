@@ -52,4 +52,4 @@ We believe partial credit should come from the achievement of major milestones i
 
 ## Current Progress
 - [x] Successfully setup speechrecognition VOSK environment and dependencies *Bianca*
-- [ ] Setup OLLAMA and Python Script for Live Feed Voice Output *Piyush*
+- [x] Setup OLLAMA and Python Script for Live Feed Voice Output *Piyush*
