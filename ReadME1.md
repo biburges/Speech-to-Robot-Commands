@@ -32,10 +32,10 @@ We will use ROS or Gazebo to take the robot commands and send them to the robot 
 ## Milestones/Schedule Checklist
 {What are the tasks that you need to complete?  Who is going to do them?  When will they be completed?}
 - [x] Complete this proposal document.  *Due Feb. 28*
-- [ ] Successfully setup speechrecognition python speech recog. module *Due April 7*
-- [ ] Successfully extract text from speech with as much noise dampening as possible *Due April 10*
-- [ ] Successfully setup an LLM *Due April 12*
-- [ ] Successfully interface LLM with output from Python Speech recognition via live feed *Due April 13*
+- [x] Successfully setup speechrecognition VOSK environment and dependencies *Due April 7*
+- [x] Successfully extract text from speech via VOSK *Due April 10*
+- [x] Successfully setup an OLLAMA *Due April 12*
+- [x] Successfully interface LLM with output from VOSK via live feed *Due April 13*
 - [ ] Setup Gazebo successfully *Due April 17*
 - [ ] Setup simulated robot car *Due April 19*
 - [ ] Interface LLM outputs with Gazebo topics for car movement *Due April 30*
@@ -49,3 +49,7 @@ We believe partial credit should come from the achievement of major milestones i
 2) Setting up LLM to produce robot commands specific to robot args and DOF given a complex life feed audio input
 3) Setting up the gazebo simulation to interface with LLM 
 4) Complete simulation responds effectively to voice input
+
+## Current Progress
+- [x] Successfully setup speechrecognition VOSK environment and dependencies *Bianca*
+- [ ] Setup OLLAMA and Python Script for Live Feed Voice Output *Piyush*
