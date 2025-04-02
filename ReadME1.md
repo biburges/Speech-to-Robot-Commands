@@ -63,7 +63,12 @@ pip install pyaudio
 - Install requests on your machine
 ```      
 pip install requests
-```    
+```
+- Install pyttxs3 on your machine
+```
+pip install pyttsx3
+```
+    
 - [x] Setup OLLAMA and Python Script for Live Feed Voice Output *Piyush*
 Steps:
 - Install Ollama Version 0.6.3 (https://ollama.com/download)
