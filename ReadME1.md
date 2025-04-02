@@ -71,7 +71,21 @@ pip install pyttsx3
     
 - [x] Setup OLLAMA and Python Script for Live Feed Voice Output *Piyush*
 Steps:
+Steps:
 - Install Ollama Version 0.6.3 (https://ollama.com/download)
 - Verify Installation via command line interfeace (windows command prompt)
-``` ollama --version ```
-- Disable any current 
+```
+ollama --version
+```
+- View any current ollama processes via:
+```
+tasklist | findstr /i "ollama"
+```
+- SKIP THIS STEP IF NOT APPLICABLE: Remove any processes that are active, where the PID is the code written before "CONSOLE" on the CLI:
+```
+taskkill /PID <PID> /F
+```
+- Start ollama server:
+```
+ollama serve
+```
