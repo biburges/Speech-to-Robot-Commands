@@ -52,6 +52,19 @@ We believe partial credit should come from the achievement of major milestones i
 
 ## Current Progress
 - [x] Successfully setup speechrecognition VOSK environment and dependencies *Bianca*
+    - Download and Install VOSK on your machine
+  ```    
+  pip3 install vosk
+  ```
+  
+    - Install pyaudio on your machine
+```      
+pip install pyaudio
+```
+    - Install requests on your machine
+```      
+pip install requests
+```    
 - [x] Setup OLLAMA and Python Script for Live Feed Voice Output *Piyush*
 Steps:
 - Install Ollama Version 0.6.3 (https://ollama.com/download)
