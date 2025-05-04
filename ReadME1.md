@@ -55,8 +55,14 @@ We believe partial credit should come from the achievement of major milestones i
 ```    
 pip3 install vosk
  ```
+
+- Installing the portaudio development library
+```
+sudo apt update
+sudo apt install portaudio19-dev python3-dev
+```
 - Install pyaudio on your machine
-```      
+```
 pip install pyaudio
 ```
 - Install requests on your machine
