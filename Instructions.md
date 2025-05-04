@@ -54,7 +54,7 @@ ollama pull llama3.2
 Change directories to the folder that has the python script and run the script
 
 ```
-python3 voice_ollama_fixed_ros_enhanced.py
+python3 final_voice_ollama.py
 ```
 
 ## While it's running
