@@ -8,7 +8,8 @@ Modern day human robot interaction is severly dependent on the user's ability to
 This is achieved by the recognition and analysis of voice commands, the parsing of the input through a LLM and ultimately the production of topic messages sent directly to a ROS node for robot manipulation. Steps taken to increase accessiblity include the choosing of specific voice recognition model that accomodate different accents and LLMs that account for the user's spread in technical knowledge regarding ROS topic messages. 
 
 ## Demonstration
-Use a combination of screen shots, video, and paragraph explanation to show off your project.
+
+See demo.mp4 for demonstration on movement and turning
 
 ## Installation Instructions
 
@@ -48,7 +49,7 @@ taskkill /PID <PID> /F
 ```
 
 ## How to Run the Code (Linux)
-Now that your audience has installed the necessary software, how do they run it?
+
 
 #### Prerequisites 
 
@@ -110,6 +111,8 @@ python3 final_voice_ollama.py
 ### While it's running
 
 When the simulation is generated on your screen and the code is running, you can speak commands to it. You can say things such as "move forward" or "stop"
+
+**See video titled How_To_Run.mp4 to see how to run it**
 
 ## References
 Include links to websites you found helpful.
