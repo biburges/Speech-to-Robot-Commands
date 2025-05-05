@@ -100,6 +100,7 @@ Then, make sure your model is available
 > sudo kill -9 ABABAB
 > ```
 
+### Terminal 4 
 
 ```
 ollama run llama3.2
@@ -111,7 +112,7 @@ If it's not pulled yet
 ollama pull llama3.2
 ```
 
-### Terminal 4
+### Terminal 5
 
 Change directories to the folder that has the python script and run the script
 
