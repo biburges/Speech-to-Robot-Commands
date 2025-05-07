@@ -12,14 +12,14 @@ from sensor_msgs.msg import LaserScan
 import time
 import math
 
-# Initialize TTS engine globally to prevent garbage collection issues
+
 engine = pyttsx3.init()
 
-# Global publisher and obstacle flag
+
 pub = None
 obstacle_detected = False
 
-# Handle graceful exit on Ctrl+C
+
 def exit_gracefully(signum, frame):
     print("\nExiting. Goodbye!")
     engine.stop()
@@ -27,14 +27,14 @@ def exit_gracefully(signum, frame):
 
 signal.signal(signal.SIGINT, exit_gracefully)
 
-# Load Vosk model for offline speech recognition
+
 def load_vosk_model():
     model_path = "model/vosk-model-small-en-us-0.15"
     if not os.path.exists(model_path):
         raise FileNotFoundError("Vosk model not found! Download and place it in the 'models' directory.")
     return Model(model_path)
 
-# Listen to microphone input and transcribe using Vosk with timeout
+
 def listen_and_transcribe(model, timeout=10):
     rec = KaldiRecognizer(model, 16000)
     audio = pyaudio.PyAudio()
@@ -61,7 +61,7 @@ def listen_and_transcribe(model, timeout=10):
             print("Listening timed out.")
             return ""
 
-# Send the transcribed text to Ollama and get a response with timeout
+
 def query_ollama(input_text, timeout=10):
     url = "http://localhost:11434/api/chat"
     payload = {
@@ -69,7 +69,7 @@ def query_ollama(input_text, timeout=10):
         "messages": [
             {
                 "role": "system",
-                "content": "You are a ROS expert. Convert user commands into ONLY ROS TurtleBot3 motion commands in Python. Respond with:\n- `/move: speed distance angular` for linear movement,\n- `/rotate: angular_speed angle_in_radians` for turning in place.\nIf the command is 'stop', respond with `/cmd_vel: 0 0 0`. Use only **1.0 m/s** for linear speed and **1.5708 rad/s** for angular speed. Do not change these speeds. Use raw numeric values only. Do not include units like rad in the output."
+                "content": "You are a ROS expert. Convert user commands into ONLY ROS TurtleBot3 motion commands in Python. Respond with:\n- `/move: speed distance angular` for linear movement,\n- `/rotate: angular_speed angle_in_radians` for turning in place.\nIf the command is 'stop', respond with `/cmd_vel: 0 0 0`. Use only **0.5 m/s** for linear speed and **1.5708 rad/s** for angular speed. Do not change these speeds. Use raw numeric values only. Do not include units like rad in the output."
             },
             {
                 "role": "user",
@@ -97,12 +97,12 @@ def query_ollama(input_text, timeout=10):
     except Exception as e:
         return f"Error: {e}"
 
-# Convert Ollama's response to speech
+
 def speak_text(text):
     engine.say(text)
     engine.runAndWait()
 
-# Parse /cmd_vel into Twist
+
 def parse_cmd_vel_to_twist(cmd_str):
     twist = Twist()
     try:
@@ -119,7 +119,6 @@ def parse_cmd_vel_to_twist(cmd_str):
         print(f"Failed to parse command: {e}")
     return twist
 
-# Helper for evaluating math expressions
 def convert(val):
     val = val.replace('π', 'pi')  # support both π and pi
     try:
@@ -128,7 +127,7 @@ def convert(val):
         print(f"Error evaluating expression {val}: {e}")
         return 0
 
-# Parse /move command
+
 def parse_move_command(cmd_str):
     try:
         cmd_str = cmd_str.replace('`', '').strip()
@@ -150,7 +149,7 @@ def parse_move_command(cmd_str):
         print(f"Failed to parse /move command: {e}")
         return None, None, None
 
-# Parse /rotate command
+
 def parse_rotate_command(cmd_str):
     try:
         cmd_str = cmd_str.replace('`', '').strip()
@@ -166,7 +165,6 @@ def parse_rotate_command(cmd_str):
         print(f"Failed to parse /rotate command: {e}")
         return None, None
 
-# Move robot a given distance at given speed
 def move_distance(pub, speed, distance, angular=0.0):
     global obstacle_detected
 
@@ -174,7 +172,7 @@ def move_distance(pub, speed, distance, angular=0.0):
     direction = math.copysign(1, distance)
     linear_speed = direction * abs(speed)
 
-    # For backward movement, apply negative speed
+    
     if distance < 0:
         print("Moving backward.")
         linear_speed = -abs(linear_speed)  # Move backward by applying negative speed
@@ -194,12 +192,12 @@ def move_distance(pub, speed, distance, angular=0.0):
         pub.publish(Twist())
         return
 
-    # If no obstacle, move with desired speed and angular velocity
+    
     twist = Twist()
     twist.linear.x = linear_speed
     twist.angular.z = angular
 
-    # Duration of the movement
+    
     duration = abs(distance / speed) if speed != 0 else 0
     start_time = time.time()
     rate = rospy.Rate(10)
@@ -218,7 +216,7 @@ def move_distance(pub, speed, distance, angular=0.0):
 
 
 
-# Rotate in place
+
 def rotate_in_place(pub, angular_speed, angle_rad):
     twist = Twist()
     twist.angular.z = angular_speed if angle_rad >= 0 else -abs(angular_speed)
@@ -233,7 +231,6 @@ def rotate_in_place(pub, angular_speed, angle_rad):
 
     pub.publish(Twist())
 
-# Obstacle detection callback
 def laser_callback(data):
     global obstacle_detected
     try:
@@ -247,7 +244,6 @@ def laser_callback(data):
         print(f"Laser error: {e}")
         obstacle_detected = True
 
-# Initialize ROS and publisher
 def init_ros():
     global pub
     rospy.init_node('voice_ollama_controller', anonymous=True)
@@ -255,7 +251,7 @@ def init_ros():
     rospy.Subscriber('/scan', LaserScan, laser_callback)
     return pub
 
-# Main function
+
 def main():
     try:
         model = load_vosk_model()
