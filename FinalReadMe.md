@@ -144,4 +144,4 @@ More time for this project would enable us to explore multiple features within t
 
 The addition of the autonomous waypoint navigation through the incorporation of slam gmapping. This would enable the user to simply pass waypoints that the robot moves towards, without the interacting with the cmd/vel topic. Users can then choose the features of the world they spawn in and pass commands to proceed towards or away from the landmarks.
 
-Also, we would like to include a way for the user change the speed through speech. Currently, we have it programmed so it will move at a velocity of 1 m/s and turn at a rate of 1.57 rad/s. We would like to continue to find a way to change the speed while the robot is moving.
+Also, we would like to include a way for the user change the speed through speech. Currently, we have it programmed so it will move at a velocity of 0.5 m/s and turn at a rate of 1.57 rad/s. We would like to continue to find a way to change the speed while the robot is moving.
