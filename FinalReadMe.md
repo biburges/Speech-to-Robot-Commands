@@ -92,12 +92,7 @@ Then, make sure your model is available
 
 > Troubleshooting Tip: If running ollama serve produces an error like "Error: listen tcp ABC.0.0.1:XYZEF: bind: address already in use", run the following code
 > ```
-> ps aux | grep ollama
-> ```
-> When you see the following output "student    ABABAB  0.0  0.6 XYXYXYXY CDCDCD pts/2   Tl   17:05   0:00 ollama serve" , run the command
-> 
-> ```
-> sudo kill -9 ABABAB
+> sudo systemctl stop ollama
 > ```
 
 ### Terminal 4 
