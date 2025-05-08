@@ -9,7 +9,10 @@ This is achieved by the recognition and analysis of voice commands, the parsing 
 
 ## Demonstration
 
-See Final_demo.mp4 for demonstration on movement and turning
+See the video for demonstration
+
+[![Demo](https://vimeo.com/1081331997/fba82ef947?ts=0&share=copy)](https://vimeo.com/1081331997/fba82ef947?ts=0&share=copy)
+
 
 ## Installation Instructions
 
