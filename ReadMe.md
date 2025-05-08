@@ -39,6 +39,10 @@ Ollama Output for ROS: `move/: 1.0 -1.0 1.0`
 
 Results in Simulation: Moved -1.0 meter at 0.5 m/s
 
+## Visual Display of Data Flow through Functions
+![Image](Function_Flowchart.png)
+
+
 ## Installation Instructions
 
 - Download and Install VOSK on your machine
@@ -140,6 +144,7 @@ python3 final_voice_ollama.py
 When the simulation is generated on your screen and the code is running, you can speak commands to it. You can say things such as "move forward" or "stop"
 
 **See the ![video](How_To_Run.mp4) to see how to run it**
+
 
 ## References
 Include links to websites you found helpful.
