@@ -47,6 +47,8 @@ This can be summarized by the context provided to the LLM via the prompt format 
 
 *"You are a ROS expert. Convert user commands into ONLY ROS TurtleBot3 motion commands in Python. Respond with:\n- `/move: speed distance angular` for linear movement,\n- `/rotate: angular_speed angle_in_radians` for turning in place.\nIf the command is 'stop', respond with `/cmd_vel: 0 0 0`. Use only **0.5 m/s** for linear speed and **1.5708 rad/s** for angular speed. Do not change these speeds. Use raw numeric values only. Do not include units like rad in the output."*
 
+It can be assumed that the movements are exact with minute error arising from the LLM's use of publishing timeout to gauge distance 
+
 
 ## Installation Instructions
 
@@ -76,6 +78,7 @@ pip3 install vosk
 ```
 ollama --version
 ```
+The output produced should be (`ollama version is 0.6.3`)
 - View any current ollama processes via:
 ```
 tasklist | findstr /i "ollama"
