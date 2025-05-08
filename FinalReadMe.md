@@ -11,8 +11,33 @@ This is achieved by the recognition and analysis of voice commands, the parsing 
 
 See the video for demonstration
 
-[![Demo](https://vimeo.com/1081331997/fba82ef947?ts=0&share=copy)](https://vimeo.com/1081331997/fba82ef947?ts=0&share=copy)
+[![Demo](thumb.jpg)](https://vimeo.com/1081331997/fba82ef947?ts=0&share=copy)
 
+### Examples
+
+**Example 1: Turning in Place 90 Degrees**
+
+Voice Command: "Turn 90 degrees"
+
+Ollama Output for ROS: `/rotate: 1 pi/2`
+
+Results in Simulation: Rotate 1.57 radians counterclockwise at 1.57 rad/s
+
+**Example 2: Move Forward 1 Meter**
+
+Voice Command: "Move forward 1 meter"
+
+Ollama Output for ROS: `move/: 1.0 1.0 1.0`
+
+Results in Simulation: Moved 1.0 meters at 0.5 m/s
+
+**Example 3: Move Backward 1 Meter**
+
+Voice Command: "Move backward 1 meter"
+
+Ollama Output for ROS: `move/: 1.0 -1.0 1.0`
+
+Results in Simulation: Moved -1.0 meter at 0.5 m/s
 
 ## Installation Instructions
 
@@ -65,17 +90,9 @@ Make sure the following are installed and working
 
 Additionally make sure you have the latest python script downloaded and placed into the ``IE Final Project/Speach_to_text_ollama`` folder
 
-Now you will need four terminals open
+Now you will need about three terminals open
 
-### Terminal 1 
-
-Start ROS Core
-
-```
-roscore
-```
-
-### Terminal 2
+### Terminal 1
 
 Launch TurtleBot3 Simualtion
 
@@ -83,7 +100,7 @@ Launch TurtleBot3 Simualtion
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
-### Terminal 3
+### Terminal 2
 
 Start Ollama Server
 
@@ -98,7 +115,7 @@ Then, make sure your model is available
 > sudo systemctl stop ollama
 > ```
 
-### Terminal 4 
+**If you are not able to run this in Terminal 2, open a new terminal**
 
 ```
 ollama run llama3.2
@@ -110,7 +127,7 @@ If it's not pulled yet
 ollama pull llama3.2
 ```
 
-### Terminal 5
+### Terminal 3
 
 Change directories to the folder that has the python script and run the script
 
@@ -122,7 +139,7 @@ python3 final_voice_ollama.py
 
 When the simulation is generated on your screen and the code is running, you can speak commands to it. You can say things such as "move forward" or "stop"
 
-**See video titled How_To_Run.mp4 to see how to run it**
+**See the ![video](How_To_Run.mp4) to see how to run it**
 
 ## References
 Include links to websites you found helpful.
