@@ -50,10 +50,6 @@ This can be summarized by the context provided to the LLM via the prompt format 
 
 ## Installation Instructions
 
-- Download and Install VOSK on your machine
-```    
-pip3 install vosk
- ```
 - Installing the portaudio development library
 ```
 sudo apt update
@@ -71,6 +67,10 @@ pip install requests
 ```
 pip install pyttsx3
 ```
+- Download and Install VOSK on your machine
+```    
+pip3 install vosk
+ ```
 - Install Ollama Version 0.6.3 (https://ollama.com/download)
 - Verify Installation via command line interfeace (windows command prompt)
 ```
